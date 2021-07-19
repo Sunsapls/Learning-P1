@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Google charts</title>
+<link rel="stylesheet" herf="barchart.css">
+
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Dinesh', 'Erica', 'Manmohan', 'pappu', 'Ravi', 'Winning line'],
+          ['Lunes',  6,      8,         22,             8,           0,      6],
+          ['Marters',  5,      12,        59,             8,          28,      20],
+          ['Jueves',  7,      17,        57,             7,           37,      30],
+          ['Vernes',  9,      10,        15,             9,           15,      4],
+          ['Sabado',  1,      9,         6,             1,          6,      6],
+	['domingo', 1, 5 , 10 , 4, 6, 6]
+
+        ]);
+
+        var options = {
+          title : 'votes got in different competition , competetors wise',
+          vAxis: {title: 'votes'},
+          hAxis: {title: 'Days in Spanish'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+ <div id="chart_div" style="width: 1500px; height: 800px;"></div>
+</body>
+</html>
+

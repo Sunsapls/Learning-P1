@@ -1,0 +1,10 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.chart 
+{
+	margin: 2000px auto;
+	width: 6900px;
+	height: 300px;
+}
